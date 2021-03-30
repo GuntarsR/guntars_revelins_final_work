@@ -1,4 +1,4 @@
-package lv.lv;
+package lv.lu;
 
 public class HelloWorld {
 
