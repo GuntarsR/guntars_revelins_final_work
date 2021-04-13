@@ -1,9 +1,11 @@
 package lv.lu.guntars.revelins.finalwork.repository;
 
 
+import lv.lu.guntars.revelins.finalwork.model.Product;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import lv.lu.guntars.revelins.finalwork.model.Product;
 
 public class ProductRepository implements Repository<Product> {
 
@@ -15,22 +17,25 @@ public class ProductRepository implements Repository<Product> {
     }
 
     @Override
-    public Long save(Product entity) {
-        return null;
+    public Long save(Product product) {
+        idCounter++;
+        repository.put(idCounter, product);
+        product.setId(idCounter);
+        return idCounter;
     }
 
     @Override
     public List<Product> findAll() {
-        return null;
+        return new ArrayList<>(repository.values());
     }
 
     @Override
     public Product findById(Long id) {
-        return null;
+        return repository.get(id);
     }
 
     @Override
     public void delete(Long id) {
-
+        repository.remove(id);
     }
 }

@@ -8,8 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class ProductRepositoryTest {
 
@@ -38,4 +37,35 @@ public class ProductRepositoryTest {
         assertTrue(result.contains(fish));
     }
 
+    @Test
+    public void shouldFindProductById() {
+        Product orange = new Product();
+        repoMock.put(1L, orange);
+
+        Product result = victim.findById(1L);
+        assertEquals(orange, result);
+    }
+
+    @Test
+    public void shouldSaveProduct() {
+        Product orange = new Product();
+
+        Long productId = victim.save(orange);
+
+        assertEquals(productId, orange.getId());
+        assertTrue(repoMock.containsKey(productId));
+        assertEquals(orange, repoMock.get(productId));
+    }
+
+    @Test
+    public void shouldRemoveObjectById() {
+        Product orange = new Product();
+        orange.setId(1L);
+        repoMock.put(1L, orange);
+
+        victim.delete(1L);
+
+        assertFalse(repoMock.containsKey(1L));
+        assertFalse(repoMock.containsValue(orange));
+    }
 }
