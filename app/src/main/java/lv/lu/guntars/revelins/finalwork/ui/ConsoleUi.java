@@ -7,11 +7,15 @@ import java.util.Scanner;
 
 public class ConsoleUi {
 
-    private ProductService productService = new ProductService();
+    private ProductService productService;
+    private Scanner scanner;
+
+    public ConsoleUi(ProductService productService, Scanner scanner) {
+        this.productService = productService;
+        this.scanner = scanner;
+    }
 
     public void run() {
-
-        Scanner scanner = new Scanner(System.in);
         int userChoice;
         while (true) {
 
@@ -20,12 +24,21 @@ public class ConsoleUi {
 
             if (userChoice == 1) {
                 ProductInputData productInputData = new ProductInputData();
+
+                System.out.println("Enter product name: ");
+                productInputData.setName(scanner.next());
+
+                System.out.println("Enter product price: ");
+                productInputData.setPrice(scanner.nextDouble());
+
+                System.out.println("Enter product category: ");
+                productInputData.setCategory(scanner.next());
+
                 productService.save(productInputData);
             } else if (userChoice == 2) {
                 productService.findAll().stream()
                         .forEach(System.out::println);
             }
-
 
             if (userChoice == 0) {
                 break;
