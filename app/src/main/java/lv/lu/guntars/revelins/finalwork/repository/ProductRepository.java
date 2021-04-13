@@ -1,9 +1,9 @@
-package lv.lu.finalwork.repository;
+package lv.lu.guntars.revelins.finalwork.repository;
 
 
 import java.util.List;
 import java.util.Map;
-import lv.lu.finalwork.model.Product;
+import lv.lu.guntars.revelins.finalwork.model.Product;
 
 public class ProductRepository implements Repository<Product> {
 

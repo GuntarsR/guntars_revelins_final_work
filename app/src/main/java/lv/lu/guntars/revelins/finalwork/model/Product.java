@@ -1,4 +1,4 @@
-package lv.lu.finalwork.model;
+package lv.lu.guntars.revelins.finalwork.model;
 
 import java.math.BigDecimal;
 import java.util.Objects;
