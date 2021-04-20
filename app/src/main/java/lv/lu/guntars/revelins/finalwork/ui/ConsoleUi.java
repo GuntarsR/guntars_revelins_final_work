@@ -2,14 +2,18 @@ package lv.lu.guntars.revelins.finalwork.ui;
 
 import lv.lu.guntars.revelins.finalwork.model.ProductInputData;
 import lv.lu.guntars.revelins.finalwork.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
 
+@Controller
 public class ConsoleUi {
 
-    private ProductService productService;
-    private Scanner scanner;
+    private final ProductService productService;
+    private final Scanner scanner;
 
+    @Autowired
     public ConsoleUi(ProductService productService, Scanner scanner) {
         this.productService = productService;
         this.scanner = scanner;
@@ -47,7 +51,7 @@ public class ConsoleUi {
     }
 
     private void printMenu() {
-        System.out.println("\n\n === Product Accounting Application === ");
+        System.out.println("\n === Product Accounting Application === ");
         System.out.println(" Choose one option: \n");
         System.out.println(" Save product - 1");
         System.out.println(" List all products - 2");
