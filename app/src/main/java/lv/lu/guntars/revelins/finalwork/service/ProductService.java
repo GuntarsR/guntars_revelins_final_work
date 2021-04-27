@@ -1,11 +1,10 @@
 package lv.lu.guntars.revelins.finalwork.service;
 
-
 import lv.lu.guntars.revelins.finalwork.model.Product;
 import lv.lu.guntars.revelins.finalwork.model.ProductCategory;
 import lv.lu.guntars.revelins.finalwork.model.ProductData;
 import lv.lu.guntars.revelins.finalwork.model.ProductInputData;
-import lv.lu.guntars.revelins.finalwork.repository.ProductRepository;
+import lv.lu.guntars.revelins.finalwork.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +15,10 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private final ProductRepository repository;
+    private final Repository<Product> repository;
 
     @Autowired
-    public ProductService(ProductRepository repository) {
+    public ProductService(Repository<Product> repository) {
         this.repository = repository;
     }
 
@@ -56,4 +55,5 @@ public class ProductService {
         }
         return product;
     }
+
 }

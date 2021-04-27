@@ -1,5 +1,8 @@
 package lv.lu.guntars.revelins.finalwork.model;
 
+import lombok.Data;
+
+@Data
 public class ProductData {
 
     private final String id;
@@ -21,15 +24,4 @@ public class ProductData {
                 '}';
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPrice() {
-        return price;
-    }
 }

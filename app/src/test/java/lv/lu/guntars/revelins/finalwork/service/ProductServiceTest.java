@@ -3,7 +3,7 @@ package lv.lu.guntars.revelins.finalwork.service;
 import lv.lu.guntars.revelins.finalwork.model.Product;
 import lv.lu.guntars.revelins.finalwork.model.ProductCategory;
 import lv.lu.guntars.revelins.finalwork.model.ProductInputData;
-import lv.lu.guntars.revelins.finalwork.repository.ProductRepository;
+import lv.lu.guntars.revelins.finalwork.repository.Repository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 
 import static org.mockito.Mockito.verify;
 
+
 @RunWith(MockitoJUnitRunner.class)
 public class ProductServiceTest {
 
@@ -21,7 +22,7 @@ public class ProductServiceTest {
     private ProductService victim;
 
     @Mock
-    private ProductRepository repositoryMock;
+    private Repository<Product> repositoryMock;
 
     @Test
     public void shouldCoverAndStoreProductData() {
@@ -43,4 +44,5 @@ public class ProductServiceTest {
 
         verify(repositoryMock).save(expectedProduct);
     }
+
 }
