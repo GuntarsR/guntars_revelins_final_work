@@ -1,7 +1,7 @@
 package lv.lu.guntars.revelins.finalwork.service;
 
-import lv.lu.guntars.revelins.finalwork.model.Product;
-import lv.lu.guntars.revelins.finalwork.model.ProductCategory;
+import lv.lu.guntars.revelins.finalwork.domain.Product;
+import lv.lu.guntars.revelins.finalwork.domain.ProductCategory;
 import lv.lu.guntars.revelins.finalwork.model.ProductInputData;
 import lv.lu.guntars.revelins.finalwork.repository.Repository;
 import org.junit.Test;
