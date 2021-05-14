@@ -2,8 +2,8 @@ package lv.lu.guntars.revelins.finalwork.service;
 
 import lv.lu.guntars.revelins.finalwork.domain.Product;
 import lv.lu.guntars.revelins.finalwork.domain.ProductCategory;
+import lv.lu.guntars.revelins.finalwork.domain.ProductCrudRepository;
 import lv.lu.guntars.revelins.finalwork.model.ProductInputData;
-import lv.lu.guntars.revelins.finalwork.repository.Repository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -22,7 +22,7 @@ public class ProductServiceTest {
     private ProductService victim;
 
     @Mock
-    private Repository<Product> repositoryMock;
+    private ProductCrudRepository repositoryMock;
 
     @Test
     public void shouldCoverAndStoreProductData() {

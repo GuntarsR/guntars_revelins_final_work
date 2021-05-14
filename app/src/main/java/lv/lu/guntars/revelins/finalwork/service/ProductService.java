@@ -2,9 +2,9 @@ package lv.lu.guntars.revelins.finalwork.service;
 
 import lv.lu.guntars.revelins.finalwork.domain.Product;
 import lv.lu.guntars.revelins.finalwork.domain.ProductCategory;
+import lv.lu.guntars.revelins.finalwork.domain.ProductCrudRepository;
 import lv.lu.guntars.revelins.finalwork.model.ProductData;
 import lv.lu.guntars.revelins.finalwork.model.ProductInputData;
-import lv.lu.guntars.revelins.finalwork.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +15,11 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private final Repository<Product> productRepository;
+    private final ProductCrudRepository productRepository;
 
     @Autowired
-    public ProductService(Repository<Product> productOrmRepository) {
-        this.productRepository = productOrmRepository;
+    public ProductService(ProductCrudRepository productCrudRepository) {
+        this.productRepository = productCrudRepository;
     }
 
     public void save(ProductInputData productInputData) {
@@ -28,6 +28,7 @@ public class ProductService {
     }
 
     public List<ProductData> findAll() {
+//        throw new RuntimeException("Some random error");
         List<ProductData> result = new ArrayList<>();
         for (Product product : productRepository.findAll()) {
             result.add(convertFrom(product));

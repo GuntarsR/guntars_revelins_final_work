@@ -1,14 +1,15 @@
 package lv.lu.guntars.revelins.finalwork;
 
-import lv.lu.guntars.revelins.finalwork.config.AppConfiguration;
-import lv.lu.guntars.revelins.finalwork.ui.ConsoleUi;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@EnableAutoConfiguration
+@SpringBootApplication
 public class ProductAccountingApplication {
 
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
-        context.getBean(ConsoleUi.class).run();
+        SpringApplication.run(ProductAccountingApplication.class);
     }
+
 }

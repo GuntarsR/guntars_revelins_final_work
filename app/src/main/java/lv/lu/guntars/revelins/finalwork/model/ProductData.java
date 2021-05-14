@@ -1,8 +1,5 @@
 package lv.lu.guntars.revelins.finalwork.model;
 
-import lombok.Data;
-
-@Data
 public class ProductData {
 
     private final String id;
